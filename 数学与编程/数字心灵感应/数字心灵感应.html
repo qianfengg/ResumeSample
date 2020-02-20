@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+    <style>
+      div {
+        position: relative;
+        display: flex;
+        background: linear-gradient(45deg, skyblue, orange);
+        color: #fff;
+        padding: 10px;
+        margin: 5px 0;
+        cursor: pointer;
+        align-items: center;
+        font-size: 15px;
+      }
+
+      input[type="checkbox"] {
+        width: 20px;
+        height: 20px;
+      }
+
+      label {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        opacity: 0.5;
+        text-align: center;
+        font-size: 15px;
+        line-height: 20px;
+      }
+
+      .result {
+        width: 200px;
+        height: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      {
+        let num = 100;
+        let guessObj = {};
+
+        let getData = num => {
+          let length = num.toString(2).length;
+          let dict = {};
+          for (let i = 1; i <= num; i++) {
+            dict[i] = i.toString(2).padStart(length, 0);
+          }
+          for (let i = 0; i < length; i++) {
+            if (!guessObj[i]) {
+              guessObj[i] = [];
+            }
+            for (let key in dict) {
+              if (dict[key][length - i - 1] == 1) {
+                guessObj[i].push(key + "    ");
+              }
+            }
+          }
+          return length;
+        };
+
+        let render = length => {
+          return `
+                    <h1>心中想一个数字，数字范围是1~${num}，确认下面每个区域是否有你心中想的数字</h1>
+                    ${[...".".repeat(length)]
+                      .map(
+                        (item, index) => `
+                        <div>
+                        <input type="checkbox" id="checkbox-${index}"><label for="checkbox-${index}"></label>
+                        <span>${guessObj[index]}</span>
+                        </div>
+                    `
+                      )
+                      .join("")}
+
+                    <button class="result">看看我猜的对不对</button>
+                    <p id="resultValue"></p>
+                `;
+        };
+
+        let addEvent = () => {
+          let aInput = document.querySelectorAll("input");
+          let oBtn = document.querySelector(".result");
+          let oP = document.getElementById("resultValue");
+          aInput.forEach(item => {
+            item.addEventListener("change", function() {
+              let parent = this.parentNode;
+              if (this.checked) {
+                parent.style.border = "3px solid black";
+              } else {
+                parent.style.border = "none";
+              }
+            });
+          });
+          oBtn.addEventListener("click", () => {
+            let sum = 0;
+            aInput.forEach((item, index) => {
+              if (item.checked) {
+                sum += 2 ** index;
+              }
+            });
+            if (sum > num) {
+              alert("兄弟，你肯定撒谎了!");
+            } else {
+              oP.innerHTML = `你心中想的是----->${sum}`;
+              alert(sum);
+            }
+          });
+        };
+
+        let length = getData(num);
+        document.body.innerHTML = render(length);
+        addEvent();
+      }
+    </script>
+  </body>
+</html>

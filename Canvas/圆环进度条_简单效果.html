@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="myCanvas" width="500" height="500"></canvas>
+    <script>
+        (function(){
+
+            let deg2Rad = (deg) => deg * Math.PI / 180;
+
+            let oCvs = document.getElementById("myCanvas"),
+                ctx = oCvs.getContext("2d"),
+                W = oCvs.width = window.innerWidth,
+                H = oCvs.height = window.innerHeight,
+                R = Math.min(W, H) * 0.6 / 2,
+                deg = 0,
+                lineWidth = 5,
+                timer;
+
+            function drawCircleBg(){
+                ctx.beginPath();
+                ctx.lineWidth = lineWidth;
+                ctx.strokeStyle = "#ccc";
+                ctx.arc(W / 2, H / 2, R, 0, deg2Rad(360));
+                ctx.stroke();
+            }
+
+            function drawCircle(){
+                ctx.beginPath();
+                ctx.lineWidth = lineWidth;
+                ctx.strokeStyle = "black";
+                ctx.arc(W / 2, H / 2, R, 0, deg2Rad(deg));
+                ctx.stroke();
+            }
+
+            function drawText(){
+                ctx.beginPath();
+                ctx.font = R * .1 + "px 微软雅黑";
+                ctx.textBaseline = "middle";
+                ctx.textAlign = "center";
+                ctx.fillText(Math.floor(deg / 360 * 100) + "%", W / 2, H / 2);
+            }
+
+            function render(){
+                drawCircleBg();
+                drawCircle();
+                drawText();
+            }
+
+            function loop(){
+                ctx.clearRect(0, 0, W, H);
+                render();
+                deg ++;
+                if(deg > 360){
+                    // deg = 0;
+                    cancelAnimationFrame(timer);
+                    return;
+                }
+                timer = requestAnimationFrame(loop);
+            }
+            return {
+                run(){
+                    loop();
+                }
+            }
+        })().run();
+    </script>
+</body>
+</html>

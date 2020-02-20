@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        display: flex;
+        min-height: 100vh;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .face {
+        position: relative;
+        display: flex;
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        background-color: yellow;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .face:before {
+        position: absolute;
+        content: "";
+        top: 180px;
+        width: 150px;
+        height: 70px;
+        background-color: red;
+        border-bottom-left-radius: 70px;
+        border-bottom-right-radius: 70px;
+        transition: 0.5s;
+      }
+
+      .face:hover:before {
+        top: 210px;
+        height: 20px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+
+      .eyes {
+        display: flex;
+        position: relative;
+        top: -40px;
+      }
+
+      .eyes > .eye {
+        position: relative;
+        width: 80px;
+        height: 80px;
+        background-color: #fff;
+        margin: 0 15px;
+        border-radius: 50%;
+      }
+
+      .eye:before {
+        position: absolute;
+        content: "";
+        top: 50%;
+        left: 25px;
+        transform: translate(-50%, -50%);
+        width: 40px;
+        height: 40px;
+        background-color: #000;
+        border-radius: 50%;
+      }
+      @keyframes eyemove {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="face">
+      <div class="eyes">
+        <div class="eye"></div>
+        <div class="eye"></div>
+      </div>
+    </div>
+    <script>
+      {
+        const IsPC = () => {
+          var userAgentInfo = navigator.userAgent;
+          var Agents = new Array(
+            "Android",
+            "iPhone",
+            "SymbianOS",
+            "Windows Phone",
+            "iPad",
+            "iPod"
+          );
+          var flag = true;
+          for (var v = 0; v < Agents.length; v++) {
+            if (userAgentInfo.indexOf(Agents[v]) > 0) {
+              flag = false;
+              break;
+            }
+          }
+          return flag;
+        };
+        window.onload = function() {
+          let isPC = IsPC();
+          let aEye = document.querySelectorAll(".eye");
+          if (isPC) {
+            const { atan2, PI } = Math;
+            const rad2Deg = rad => (rad * 180) / PI;
+            let eyeMove = e => {
+              aEye.forEach(eye => {
+                let x = eye.getBoundingClientRect().left + eye.clientWidth / 2;
+                let y = eye.getBoundingClientRect().top + eye.clientHeight / 2;
+                let radian = atan2(e.pageY - y, e.pageX - x);
+                let deg = rad2Deg(radian) + 180;
+                eye.style.transform = `rotate(${deg}deg)`;
+              });
+            };
+
+            document.body.addEventListener("mousemove", eyeMove);
+          } else {
+            aEye.forEach(eye => {
+              eye.style.animation = "2s eyemove ease-in-out infinite alternate";
+            });
+          }
+        };
+      }
+    </script>
+  </body>
+</html>

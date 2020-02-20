@@ -1,0 +1,19 @@
+﻿@font-face {
+    font-family: "Big Hero 6";
+    src: url(font/Big-Hero-6-Regular_0.ttf);
+}
+
+@font-face {
+    font-family: "Nakadai";
+    src: url(font/Nakadai.ttf);
+}
+
+@font-face {
+    font-family: "Walt Disney Script";
+    src: url(font/Disney.ttf);
+}
+
+p {
+    position: absolute;
+    top: -100px;
+}

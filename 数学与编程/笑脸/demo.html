@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(45deg, orange, skyblue)
+        }
+        @keyframes rotate {
+            to{transform: rotate(360deg);}
+        }
+        div{
+            position: relative;
+            width: 100px;
+            height: 100px;
+            background-color: #fff;
+            /* transform-origin: left top; */
+            transform: rotate(0deg);
+            /* animation: 2s rotate linear infinite; */
+            border-radius: 50%;
+        }
+        .eye{
+            position: absolute;
+            width: 20%;
+            height: 20%;
+            background-color: #000;
+            border-radius: 50%;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="eye"></div>
+    </div>
+    <div>
+        <div class="eye"></div>
+    </div>
+</body>
+</html>
