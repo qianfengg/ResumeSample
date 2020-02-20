@@ -87,13 +87,6 @@
 * [GQF-UI](https://github.com/qianfengg/gqf-ui)
 
     * 参考element-ui，基于vue简单实现了部分组件，在github开源并且发布到npm 
-    * 部分截图参考
-
-        ![](./images/gqf-ui效果展示1.jpg)
-
-        ![](./images/gqf-ui效果展示2.jpg)
-
-        ![](./images/gqf-ui效果展示3.jpg)
 
 ## 技术文章
 
