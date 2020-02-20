@@ -98,9 +98,9 @@
 
 ## 演讲和讲义
 
-- 技术中心内部分享-[Canvas开发](./Canvas/Canvas.md)
+- 技术中心内部分享-[Canvas开发](https://github.com/qianfengg/Live-Demo/blob/master/Canvas/Canvas.md)
 - 技术中心内部分享-es6相关知识(根据上次canvas开发的小例子及[阮一峰es6入门](http://es6.ruanyifeng.com/)教程讲解，没有相关的讲义)
-- 技术中心内部分享-[数学与编程](./数学与编程/数学与编程.md)
+- 技术中心内部分享-[数学与编程](https://github.com/qianfengg/Live-Demo/blob/master/%E6%95%B0%E5%AD%A6%E4%B8%8E%E7%BC%96%E7%A8%8B/%E6%95%B0%E5%AD%A6%E4%B8%8E%E7%BC%96%E7%A8%8B.md)
 
 # 技能清单
 
