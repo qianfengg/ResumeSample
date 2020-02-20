@@ -16,7 +16,7 @@
  - Github：http://github.com/qianfengg
 
  - 期望职位：Web前端高级程序员/js全栈
- - 期望薪资：税前月薪19k~22k
+ - 期望薪资：税前月薪20k~22k
  - 期望城市：上海
 
 ---
@@ -25,11 +25,67 @@
 
 ## 时代天使 （ 2017年12月 ~ 至今 ）
 
-### CDS项目
+### CDS项目 （此项目为最近参与的项目，主要重构为主）
 
-### MES项目 
+1. 项目描述
 
-### ERP项目
+    1. 一个关于患者病例的系统，其中有查看方案，修改方案，查看照片等功能 
+    2. 技术架构 - 项目比较老，大量原生的代码与jq混写及页面各种老的模板语法类似jsp，ejs
+
+2. 项目职责及目标
+
+    1. 提高页面性能
+    2. 提高代码可读性，维护性
+    3. 使用vue替代之前的老模板，使代码维护性可读性更高
+    4. 通过重构，项目性能提高一倍
+
+3. 部分截图参考
+
+    1. 重灾区功能，重构的原因
+
+        ![](./images/cds重构重点之一.png)
+
+    2. **重构前**老项目的代码如下
+
+        ![](./images/cds老项目原先代码-1.png)
+
+        ![](./images/cds老项目原先代码-2.png)
+
+    3. **重构后**数据说明一切   
+
+        ![](./images/cds重构后效果一.png) 
+
+        ![](./images/cds重构后效果二.png) 
+
+### MES项目 （开发功能）
+
+1. 项目描述
+
+    1. 无锡工厂生产过程执行管理系统
+    2. 技术架构 - angular1 + layui 
+
+2. 项目职责
+
+    1. 静态页布局，使用layui布局，精确完成设计稿。
+    2. 采用ng1开发，完成前端的页面交互。
+    3. 前后端交互采用ng1中的$http
+    4. 熟悉ng1的directive绑定策略
+    5. 熟悉ng1的数据绑定，通过scope,ng-model实现双绑
+
+### ERP项目 （开发功能）
+
+1. 项目描述
+
+    1. 企业信息管理系统
+    2. 技术架构 - jq + bootstrap 
+
+2. 项目职责
+
+    1. 使用Bootstrap布局，快速搭建页面。
+    2. 添加页面交互插件，如分页，日期选择器等。
+    3. 根据后台接口文档，使用Ajax完成数据交互。
+    4. 测试阶段排查错误，定位问题，解决bug。
+    5. 后续版本跟新，需求变化。持续支持
 
 ## 贝格大数据
 
@@ -45,12 +101,22 @@
 
 ## 开源项目
 
-- [GQF-UI](https://github.com/qianfengg/gqf-ui)：参考element-ui，基于vue简单实现了部分组件，在github开源并且发布到npm
+* [GQF-UI](https://github.com/qianfengg/gqf-ui)
+
+    * 参考element-ui，基于vue简单实现了部分组件，在github开源并且发布到npm 
+    * 部分截图参考
+
+        ![](./images/gqf-ui效果展示1.jpg)
+
+        ![](./images/gqf-ui效果展示2.jpg)
+
+        ![](./images/gqf-ui效果展示3.jpg)
 
 ## 技术文章
 
 - [cocos微信小游戏](https://github.com/qianfengg/Wechat-Game-Training)
-- [记录node学习的每一天](https://github.com/qianfengg/NODE)
+- [记录node学习的过程](https://github.com/qianfengg/NODE)
+- [记录vue学习的过程](https://github.com/qianfengg/Vue-Learning)
 
 ## 演讲和讲义
 
@@ -60,13 +126,15 @@
 
 # 技能清单
 
-以下均为我熟练使用的技能
-
-- Web开发：Node
-- 前端框架：Vue/React
-- 前端工具：Webpack/SaSS
-- 数据库相关：MySQL/Mongo
-- 版本管理：文档和自动化部署工具：Svn/Git
+1. 熟悉W3C标准能解决浏览器之间的兼容。
+2. 熟悉CSS3最新样式，实现动画效果。掌握弹性布局。
+3. 熟练原生JS，dom操作，掌握面向对象机制，理解原型链的继承机制。
+4. 熟悉Vue，React框架。
+5. 熟悉webpack，了解具体webpack入口，出口配置，能够完成常见loader,插件的配置。
+6. 熟练运用Ajax完成数据交互。
+7. 熟练ES6
+8. 熟悉数据库相关：MySQL/Mongo
+9. 熟悉版本管理：文档和自动化部署工具：Svn/Git
 
 ---
 
