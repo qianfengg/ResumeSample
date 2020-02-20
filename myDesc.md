@@ -17,7 +17,7 @@
  - Github：http://github.com/qianfengg
 
  - 期望职位：Web前端高级程序员/js全栈
- - 期望薪资：税前月薪20k~22k
+ - 期望薪资：税前月薪20k~25k
  - 期望城市：上海
 
 ---
