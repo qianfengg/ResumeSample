@@ -95,6 +95,7 @@
 - [cocos微信小游戏](https://github.com/qianfengg/Wechat-Game-Training)
 - [记录node学习的过程](https://github.com/qianfengg/NODE)
 - [记录vue学习的过程](https://github.com/qianfengg/Vue-Learning)
+- [记录ts学习的过程](https://github.com/qianfengg/TypeScript-Learning)
 
 ## 演讲和讲义
 
@@ -113,6 +114,7 @@
 7. 熟练ES6
 8. 熟悉数据库相关：MySQL/Mongo
 9. 熟悉版本管理：文档和自动化部署工具：Svn/Git
+10. 熟悉TS
 
 ---
 
